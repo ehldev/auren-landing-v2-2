@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grupo Auren</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css">
+    <!-- <style>
+    :root {
+      --primary: #ff0054;
+      --dark: #0b0b0b;
+      --light: #fefcfd;
+    }
+    .text-primary { color: var(--primary); }
+    .bg-primary { background-color: var(--primary); }
+    .border-primary { border-color: var(--primary); }
+  </style> -->
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#D3295E',
+                        dark: '#090C66',
+                        light: '#fefcfd',
+                        "app-blue": '#04063E',
+                        "app-text": '#908C8A',
+                        "app-yellow": '#FFAE01',
+                        "app-green": '#01B976',
+                        "app-cyan": '#09C6F4',
+                        "app-brown": '#351E29'
+                    },
+                },
+                container: {
+                    center: true, // opcional: centra el container
+                    padding: '1rem', // opcional: añade padding lateral
+                    screens: {
+                        sm: '100%',   // hasta este breakpoint ocupa todo
+                        md: '720px',
+                        lg: '720px',
+                        xl: '1140px',
+                        // '2xl': '1320px', // aquí ajustas el ancho máximo global
+                    },
+                },
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="bg-gradient-to-br from-[#fef8f7] to-[#f7edeb]">
+        <!-- Header superior -->
+        <header id="mainHeader" class="bg-white shadow-md w-full z-[100] py-4 fixed top-0 left-0 right-0">
+            <div class="container mx-auto flex items-center justify-between px-4 lg:px-0">
+                <!-- Logo -->
+                <div class="flex items-center gap-2 text-xl font-bold text-[var(--dark)]">
+                    <i class="ri-arrow-up-right-line text-primary text-lg"></i>
+                    <img src="https://blackversions.com/wp-content/uploads/2025/10/logo-grupo-auren.png"
+                        alt="Grupo Auren" class="max-w-[250px]">
+                </div>
+
+                <!-- Botón hamburguesa -->
+                <button id="openMenu" class="md:hidden text-2xl text-primary">
+                    <i class="ri-menu-line"></i>
+                </button>
+
+                <!-- Navegación Desktop -->
+                <nav class="hidden md:flex items-center gap-8 text-sm font-semibold uppercase">
+                    <a href="#" class="text-[15px] hover:text-primary">Portada</a>
+                    <a href="#nosotros" class="text-[15px] hover:text-primary">Nosotros</a>
+                    <a href="#services" class="text-[15px] hover:text-primary">Servicios</a>
+                    <a href="#blog" class="text-[15px] hover:text-primary">Blog</a>
+                    <button type="button"
+                        class="inline-block border-2 border-primary text-primary font-semibold px-3 py-1 rounded-md bg-primary text-white transition"
+                        onclick="openModal()">
+                        <i class="ri-calendar-line mr-2"></i> Agendar reunión
+                    </button>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Menú Móvil Slide -->
+        <div id="mobileOverlay"
+            class="fixed inset-0 bg-white uppercase z-50 flex flex-col items-center justify-center gap-y-6 text-xl font-semibold text-[var(--dark)] transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+            <button id="closeMenu" class="absolute top-4 right-6 text-3xl text-primary">
+                <i class="ri-close-line"></i>
+            </button>
+
+            <a href="#" class="text-[15px] hover:text-primary">Portada</a>
+            <a href="#nosotros" class="text-[15px] hover:text-primary">Nosotros</a>
+            <a href="#services" class="text-[15px] hover:text-primary">Servicios</a>
+            <a href="#" class="text-[15px] hover:text-primary">Blog</a>
+        </div>
+
+        <!-- HERO -->
+        <section
+            class="relative container px-4 lg:px-0 mx-auto pt-28 pb-28 md:pt-[140px] grid md:grid-cols-2 gap-4 items-center overflow-hidden">
+            <!-- LEFT -->
+
+            <img src="./img-1.png" alt="" class="absolute -bottom-[100px] w-[300px]">
+
+            <div>
+                <p class="text-[12px] font-[800] uppercase text-transparent mb-2 flex items-center gap-1"
+                    data-aos="fade-right">
+                    <i class="ri-arrow-up-right-line"></i> Distribuidora de consumo masivo en Lima
+                </p>
+                <h1 class="text-4xl md:text-[48px] font-bold leading-[44px] mt-2 mb-6" data-aos="fade-right"
+                    data-aos-delay="200">
+                    Impulsamos la distribución de tus productos con
+                    <span class="text-primary rounded-md inline-block" data-aos="fade-right"
+                        data-aos-delay="250">eficiencia y confianza</span>
+                </h1>
+                <p data-aos="fade-right" data-aos-delay="150">
+                    Hacemos que tus productos lleguen con la eficiencia que necesitas y la confianza que tu negocio
+                    merece,
+                    integrando diversas categorías en una sola operación de distribución.
+                </p>
+                <button type="button"
+                    class="mt-8 relative z-50 inline-block border-2 border-primary text-primary font-semibold px-5 py-2 rounded-md bg-primary text-white transition"
+                    onclick="openModal()">
+                    <i class="ri-calendar-line mr-2"></i> Agendar reunión
+                </button>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="relative flex justify-center items-center pt-28 md:pt-0" data-aos="fade-left">
+                <!-- <img src="/images/girl.png" alt="Marketing Girl" class="w-[260px] md:w-[320px] z-10" /> -->
+
+                <!-- ICONOS -->
+                <div class="absolute top-10 md:top-6 left-20 bg-white rounded-xl p-2 shadow-lg z-20 float-y">
+                    <i class="ri-bar-chart-fill text-2xl text-[#ffb700]"></i>
+                </div>
+                <div class="absolute top-10 right-20 bg-white rounded-xl p-2 shadow-lg z-20 float-y">
+                    <i class="ri-pie-chart-2-fill text-2xl text-[#00b974]"></i>
+                </div>
+                <div
+                    class="absolute -bottom-[80px] right-32 md:bottom-0 bg-white rounded-xl p-2 shadow-lg z-20 float-y">
+                    <i class="ri-coins-fill text-2xl text-[#00c3ff]"></i>
+                </div>
+
+                <div class="relative w-[350px] h-[350px] rounded-full overflow-hidden mx-auto">
+                    <!-- Mitad izquierda (roja con imagen) -->
+                    <div class="absolute top-0 left-0 w-1/2 h-full overflow-hidden">
+                        <img src="https://crowdytheme.com/wp/arolax/web-design-agencey/wp-content/uploads/sites/15/2024/07/Group-1000003642-150x300.png"
+                            class="w-full h-full object-cover mix-blend-multiply bg-red-600" />
+                    </div>
+
+                    <!-- Mitad derecha (imagen normal) -->
+                    <div class="absolute top-0 right-0 w-1/2 h-full overflow-hidden">
+                        <img src="https://crowdytheme.com/wp/arolax/web-design-agencey/wp-content/uploads/sites/15/2024/06/1-1.jpg"
+                            class="w-full h-full object-cover" />
+                    </div>
+
+                    <!-- Botón de video -->
+                    <div class="absolute bottom-6 right-[-30px] flex items-center gap-2">
+                        <button class="w-12 h-12 rounded-full bg-black text-white flex items-center justify-center">
+                            <i class="ri-play-fill text-2xl"></i>
+                        </button>
+                        <span class="text-xs font-semibold text-black">WATCH VIDEO</span>
+                    </div>
+
+                    <!-- Decoraciones (opcional) -->
+                    <div class="absolute top-4 left-4 w-2 h-2 bg-black rounded-full"></div>
+                    <div class="absolute top-10 left-10 text-black text-2xl">〰</div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- Marcas -->
+    <section class="pt-16 bg-white">
+        <div class="container mx-auto px-4 lg:px-0">
+            <div class="text-center">
+                <h2 class="text-[40px] font-bold leading-[40px]" data-aos="fade-right">
+                    El respaldo de marcas líderes
+                </h2>
+
+                <p class="text-gray-500 mt-4" data-aos="fade-right">Cubrimos la cadena completa de distribución
+                    horizontal.</p>
+            </div>
+
+            <div id="logo-marquee" class="mt-8 relative overflow-hidden" data-speed="60">
+                <ul id="marquee-track"
+                    class="flex items-center gap-12 whitespace-nowrap will-change-transform select-none">
+                    <!-- Set ORIGINAL (solo una vez) -->
+                    <li class="shrink-0" data-aos="fade-in">
+                        <img src="./images/marcas/logo-colgate.png" class="h-20 w-auto pointer-events-none" />
+                    </li>
+                    <li class="shrink-0" data-aos="fade-in">
+                        <img src="./images/marcas/logo-dulfina.png" class="h-20 w-auto pointer-events-none" />
+                    </li>
+                    <li class="shrink-0" data-aos="fade-in">
+                        <img src="./images/marcas/logo-la-patrona.png" class="h-20 w-auto pointer-events-none" />
+                    </li>
+                    <li class="shrink-0" data-aos="fade-in">
+                        <img src="./images/marcas/logo-movistar.png" class="h-20 w-auto pointer-events-none" />
+                    </li>
+                    <li class="shrink-0" data-aos="fade-in">
+                        <img src="./images/marcas/logo-san-fernando.png" class="h-20 w-auto pointer-events-none" />
+                    </li>
+                    <li class="shrink-0" data-aos="fade-in">
+                        <img src="./images/marcas/logo-yichang.png" class="h-20 w-auto pointer-events-none" />
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nosotros -->
+    <section id="nosotros" class="bg-white pt-16">
+        <div class="container mx-auto flex flex-col-reverse lg:flex-row items-center gap-10 px-4 lg:px-0">
+
+            <!-- Texto -->
+            <div class="w-full lg:w-1/2 space-y-6">
+                <span class="inline-block px-4 py-1 text-sm font-semibold text-white bg-transparent rounded-full"
+                    data-aos="fade-right">
+                    ¿Por qué elegirnos como tu distribuidora?
+                </span>
+
+                <h2 class="text-[40px] font-bold leading-[40px]" data-aos="fade-right">
+                    Un operador integral que impulsa <span class="text-primary">tu crecimiento</span>
+                </h2>
+
+                <p class="text-gray-600" data-aos="fade-right">
+                    Integramos logística, tecnología y ejecución de campo para que tu marca tenga más eficiencia,
+                    control y resultados reales.
+                </p>
+
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3" data-aos="fade-in">
+                        <span class="text-pink-600 text-xl">✔️</span>
+                        <p><strong>Un solo operador, múltiples categorías</strong>
+                            <span class="text-gray-600">— modelo horizontal que reduce
+                                fricciones y aumenta la eficiencia.</span>
+                        </p>
+                    </li>
+                    <li class="flex items-start gap-3" data-aos="fade-in">
+                        <span class="text-pink-600 text-xl">✔️</span>
+                        <p><strong>Entregas confiables y medibles</strong>
+                            <span class="text-gray-600">— altos niveles de cumplimiento (OTIF) con
+                                procesos controlados.</span>
+                        </p>
+                    </li>
+                    <li class="flex items-start gap-3" data-aos="fade-in">
+                        <span class="text-pink-600 text-xl">✔️</span>
+                        <p><strong>Data y reportes unificados</strong>
+                            <span class="text-gray-600">— visibilidad en tiempo real para tomar
+                                decisiones con seguridad.</span>
+                        </p>
+                    </li>
+                    <li class="flex items-start gap-3" data-aos="fade-in">
+                        <span class="text-pink-600 text-xl">✔️</span>
+                        <p><strong>Optimización de costos y complejidad</strong>
+                            <span class="text-gray-600">— centralizar con un socio reduce
+                                gastos y coordinación.</span>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Imagen -->
+            <div class="w-full lg:w-1/2 flex flex-col justify-center">
+                <img src="https://themes.muffingroup.com/be/marketing2/wp-content/uploads/2022/06/marketing2-work-pic1.webp"
+                    alt="" class="max-w-[100%] mx-auto" data-aos="fade-left">
+                <!-- <section id="statsSection">
+                    <div class="grid grid-cols-2 gap-4">
+
+                        <div class="bg-white rounded-2xl px-6 py-5 shadow-md border border-gray-100 text-center">
+                            <p class="stat text-3xl font-bold text-[#ff0054]" data-target="20">20</p>
+                            <p class="text-sm text-gray-500">Años de experiencia</p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl px-6 py-5 shadow-md border border-gray-100 text-center">
+                            <p class="stat text-3xl font-bold text-[#ff0054]" data-target="1000">1000</p>
+                            <p class="text-sm text-gray-500">Marcas atendidas</p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl px-6 py-5 shadow-md border border-gray-100 text-center">
+                            <p class="stat text-3xl font-bold text-[#ff0054]" data-target="20000000">20.000.000</p>
+                            <p class="text-sm text-gray-500">Productos gestionados/año</p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl px-6 py-5 shadow-md border border-gray-100 text-center">
+                            <p class="stat text-3xl font-bold text-[#ff0054]" data-target="24">24</p>
+                            <p class="text-sm text-gray-500">Ciudades con cobertura</p>
+                        </div>
+
+                    </div>
+                </section> -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="services" class="my-10 py-16 bg-[#F9F0EC]">
+        <!-- Título principal -->
+        <div class="container mx-auto text-left mb-16 px-4 lg:px-0" data-aos="fade-up">
+            <p class="text-sm font-bold text-[#ff0054] uppercase mb-2">
+                Nuestros servicios
+            </p>
+            <h2 class="text-[40px] font-bold leading-[40px]">
+                Soluciones integrales <br> para cada etapa
+            </h2>
+
+            <p class="text-gray-500 mt-4">Cubrimos la cadena completa de distribución horizontal.</p>
+        </div>
+
+        <!-- 3 columnas -->
+        <div class="container px-4 lg:px-0 mx-auto grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+
+            <!-- Item 1 -->
+            <div class="service-card flex flex-col items-start rounded-md" data-aos="fade-up" data-aos-delay="100">
+                <span
+                    class="bg-[#09C6F4] text-xs font-bold text-left text-white inline-block w-[74px] px-3 py-1 rounded-md mb-4">01</span>
+                <div class="content text-left">
+                    <img src="https://themes.muffingroup.com/be/marketing2/wp-content/uploads/2022/06/marketing2-home-icon4.svg"
+                        alt="" class="my-8">
+                    <h3 class="text-[24px] font-[400] leading-[24px]">Gestión de <br> pedidos (OMS)
+                    </h3>
+                    <p class="text-sm text-gray-500 text-left  mt-6 max-w-[80%]">Centralización de órdenes y ruteo
+                        inteligente.</p>
+                </div>
+                <button type="button"
+                    class="mt-8 text-xl w-[32px] h-[32px] rounded-full flex justify-center items-center hover:bg-primary hover:text-white">
+                    <i class="ri-arrow-right-line"></i>
+                </button>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="service-card flex flex-col items-start rounded-md" data-aos="fade-up" data-aos-delay="100">
+                <span
+                    class="text-xs font-bold text-left text-white bg-[#01B976] inline-block w-[74px] px-3 py-1 rounded-md mb-4">02</span>
+                <div class="content text-left">
+                    <img src="https://themes.muffingroup.com/be/marketing2/wp-content/uploads/2022/06/marketing2-home-icon3.svg"
+                        alt="" class="my-8">
+                    <h3 class="text-[24px] font-[400] leading-[24px]">Almacenaje <br> & picking
+                    </h3>
+                    <p class="text-sm text-gray-500 text-left mt-6 max-w-[80%]">Inventarios controlados y preparación de
+                        pedidos
+                        eficiente.</p>
+                </div>
+                <button type="button"
+                    class="mt-8 text-xl w-[32px] h-[32px] rounded-full flex justify-center items-center hover:bg-primary hover:text-white">
+                    <i class="ri-arrow-right-line"></i>
+                </button>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="service-card flex flex-col items-start rounded-md" data-aos="fade-up" data-aos-delay="100">
+                <span
+                    class="bg-[#FFAE01] text-xs font-bold text-left text-white inline-block w-[74px] px-3 py-1 rounded-md mb-4">03</span>
+                <div class="content text-left">
+                    <img src="https://themes.muffingroup.com/be/marketing2/wp-content/uploads/2022/06/marketing2-home-icon2.svg"
+                        alt="" class="my-8">
+                    <h3 class="text-[24px] font-[400] leading-[24px]">Distribución <br> y transporte
+                    </h3>
+                    <p class="text-sm text-gray-500 text-left mt-6 max-w-[80%]">Cobertura confiable con foco en
+                        cumplimiento de
+                        entregas.</p>
+                </div>
+                <button type="button"
+                    class="mt-8 text-xl w-[32px] h-[32px] rounded-full flex justify-center items-center hover:bg-primary hover:text-white">
+                    <i class="ri-arrow-right-line"></i>
+                </button>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="service-card flex flex-col items-start rounded-md mt-4" data-aos="fade-up" data-aos-delay="100">
+                <span
+                    class="text-xs font-bold text-left text-white bg-[#01B976] inline-block w-[74px] px-3 py-1 rounded-md mb-4">04</span>
+                <div class="content text-left">
+                    <img src="https://themes.muffingroup.com/be/marketing2/wp-content/uploads/2022/06/marketing2-home-icon3.svg"
+                        alt="" class="my-8">
+                    <h3 class="text-[24px] font-[400] leading-[24px]">Atención a <br> PDV & merchandising
+                    </h3>
+                    <p class="text-sm text-gray-500 text-left mt-6 max-w-[80%]">Reposición, exhibición y auditoría en
+                        tienda.</p>
+                </div>
+                <button type="button"
+                    class="mt-8 text-xl w-[32px] h-[32px] rounded-full flex justify-center items-center hover:bg-primary hover:text-white">
+                    <i class="ri-arrow-right-line"></i>
+                </button>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="service-card flex flex-col items-start rounded-md mt-4" data-aos="fade-up" data-aos-delay="100">
+                <span
+                    class="bg-[#FFAE01] text-xs font-bold text-left text-white inline-block w-[74px] px-3 py-1 rounded-md mb-4">05</span>
+                <div class="content text-left">
+                    <img src="https://themes.muffingroup.com/be/marketing2/wp-content/uploads/2022/06/marketing2-home-icon2.svg"
+                        alt="" class="my-8">
+                    <h3 class="text-[24px] font-[400] leading-[24px]">Rastrillajes <br> de campo
+                    </h3>
+                    <p class="text-sm text-gray-500 text-left  mt-6 max-w-[80%]">Visibilidad directa de ejecución en
+                        puntos de venta.</p>
+                </div>
+                <button type="button"
+                    class="mt-8 text-xl w-[32px] h-[32px] rounded-full flex justify-center items-center hover:bg-primary hover:text-white">
+                    <i class="ri-arrow-right-line"></i>
+                </button>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="service-card flex flex-col items-start rounded-md mt-4" data-aos="fade-up" data-aos-delay="100">
+                <span
+                    class="bg-[#09C6F4] text-xs font-bold text-left text-white inline-block w-[74px] px-3 py-1 rounded-md mb-4">06</span>
+                <div class="content text-left">
+                    <img src="https://themes.muffingroup.com/be/marketing2/wp-content/uploads/2022/06/marketing2-home-icon4.svg"
+                        alt="" class="my-8">
+                    <h3 class="text-[24px] font-[400] leading-[24px]">Herramientas <br> y tecnológicas
+                    </h3>
+                    <p class="text-sm text-gray-500 text-left mt-6 max-w-[90%]">Trazabilidad y análisis en tiempo real.
+                    </p>
+                </div>
+                <button type="button"
+                    class="mt-8 text-xl w-[32px] h-[32px] rounded-full flex justify-center items-center hover:bg-primary hover:text-white">
+                    <i class="ri-arrow-right-line"></i>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- <section class="py-20 bg-white overflow-hidden">
+        <div class="container mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+
+            <div class="relative w-full flex justify-center items-center" data-aos="fade-right">
+                <img src="https://themes.muffingroup.com/be/marketing2/wp-content/uploads/2022/06/marketing2-work-pic1.webp"
+                    alt="Grupo Auren Logística" class="max-w-[80%] mt-14">
+            </div>
+
+            <div data-aos="fade-left">
+                <p class="text-sm font-bold text-[#ff0054] mb-3 flex items-center gap-2">
+                    <i class="ri-arrow-up-right-line text-sm"></i> GRUPO AUREN
+                </p>
+
+                <h2 class="text-4xl md:text-5xl font-bold text-[#0b0b0b] leading-tight mb-4">
+                    Nos enfocamos en la <span class="text-[#ff0054]">eficiencia logística</span>
+                </h2>
+
+                <p class="text-gray-500 mb-8 text-sm md:text-base leading-relaxed">
+                    En Grupo Auren integramos tecnología, gestión y equipo para lograr una distribución fluida y
+                    confiable.
+                    Optimizamos cada proceso desde el almacenaje hasta la entrega final, asegurando el cumplimiento de
+                    los tiempos pactados.
+                </p>
+
+                <div class="flex gap-8 mb-10">
+                    <div>
+                        <p class="text-sm text-gray-500 mb-1">Nivel de cumplimiento</p>
+                        <div class="inline-block bg-[#fbbc05] text-white text-sm font-semibold px-3 py-1 rounded-md">95%
+                        </div>
+                        <p class="text-sm mt-1 text-[#0b0b0b] font-medium">Órdenes entregadas a tiempo</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-500 mb-1">Aumento de eficiencia</p>
+                        <div class="inline-block bg-[#00b386] text-white text-sm font-semibold px-3 py-1 rounded-md">
+                            +30%</div>
+                        <p class="text-sm mt-1 text-[#0b0b0b] font-medium">Reducción de tiempos logísticos</p>
+                    </div>
+                </div>
+
+                <a href="#"
+                    class="inline-flex items-center gap-2 border-2 border-[#ff0054] text-[#ff0054] font-semibold text-sm px-5 py-3 rounded-md bg-primary text-white transition-all duration-300">
+                    <i class="ri-arrow-right-up-line"></i> Conocer más
+                </a>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+
+            <!-- Título -->
+            <div class="text-left mb-12">
+                <!-- <span
+                    class="inline-block px-4 py-1 text-sm font-semibold bg-[#fce8ed] text-[#d33864] rounded-full mb-4" data-aos="fade-right">
+                    Un grupo que respalda tu operación
+                </span> -->
+                <h2 class="text-[40px] leading-[40px] font-bold" data-aos="fade-right" data-aos-delay="100">
+                    Cuatro empresas, una sola misión: <br> <span class="text-primary">Impulsar el crecimiento de tu
+                        marca</span>
+                </h2>
+                <p class="mt-4 text-gray-600" data-aos="fade-right" data-aos-delay="150">
+                    Empresas integradas que operan bajo una misma visión para asegurar experiencia, recursos y
+                    continuidad en cada proyecto.
+                </p>
+            </div>
+
+            <!-- Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- Card 1 -->
+                <div class="bg-primary text-white rounded-xl p-6 flex items-center justify-center gap-4"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <!-- <div>
+                        <h3 class="text-lg font-semibold mb-2">AUREN</h3>
+                        <p class="text-sm opacity-70 mb-4">Quis est metus at sodales imperdiet.</p>
+                        <span class="text-2xl">→</span>
+                    </div> -->
+                    <img src="./images/logos-auren/logo-auren.png" alt="AUREN"
+                        class="max-w-[100%] hover:scale-95 transition-all">
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-app-green rounded-xl p-6 flex items-center justify-center gap-4 text-white"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <!-- <div>
+                        <h3 class="text-lg font-semibold mb-2">AURENLAC</h3>
+                        <p class="text-sm opacity-80 mb-4">Quis est metus at sodales imperdiet.</p>
+                        <span class="text-2xl">→</span>
+                    </div> -->
+                    <img src="./images/logos-auren/logo-aurenlac.png" alt="AURENLAC"
+                        class="max-w-[100%] hover:scale-95 transition-all">
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-app-yellow text-white rounded-xl p-6 flex items-center justify-center gap-4"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <!-- <div>
+                        <h3 class="text-lg font-semibold mb-2">AURENNET</h3>
+                        <p class="text-sm opacity-70 mb-4">Información clara para tus decisiones.</p>
+                        <span class="text-2xl">→</span>
+                    </div> -->
+                    <img src="./images/logos-auren/logo-aurennet.png" alt="AURENNET"
+                        class="max-w-[100%] hover:scale-95 transition-all">
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-app-cyan text-white rounded-xl p-6 flex items-center justify-center gap-4"
+                    data-aos="fade-up" data-aos-delay="400">
+                    <!-- <div>
+                        <h3 class="text-lg font-semibold mb-2">DIPROSA</h3>
+                        <p class="text-sm opacity-70 mb-4">Impulsamos el crecimiento de tu marca.</p>
+                        <span class="text-2xl">→</span>
+                    </div> -->
+                    <img src="./images/logos-auren/logo-diprosa.png" alt="DIPROSA"
+                        class="max-w-[100%] hover:scale-95 transition-all">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="bg-gradient-to-br from-[#fefcfd] to-[#f6f6f9] py-16 px-4 overflow-hidden">
+        <div class="container mx-auto grid md:grid-cols-2 items-center gap-12">
+
+            <!-- Imagen -->
+            <div class="flex justify-center items-center h-full">
+                <img src="https://themes.muffingroup.com/be/marketing2/wp-content/uploads/2022/06/marketing2-work-pic3.webp"
+                    alt="Experiencia" class="md:w-[80%]">
+            </div>
+
+            <!-- Contenido -->
+            <div>
+                <span
+                    class="inline-block text-transparent px-4 py-1.5 text-sm rounded-full font-semibold tracking-wide shadow-sm"
+                    data-aos="fade-right" data-aos-delay="100">
+                    Empresa de distribución horizontal
+                </span>
+
+                <h2 class="text-[40px] font-bold mt-4 leading-[40px]" data-aos="fade-right" data-aos-delay="150">
+                    Nuestra experiencia en números
+                </h2>
+
+                <p class="text-gray-500 mt-4 max-w-xl" data-aos="fade-right" data-aos-delay="200">
+                    Acompañamos tanto a compañías consolidadas como a marcas emergentes. Nuestra experiencia se refleja
+                    en cifras que demuestran alcance, confiabilidad y capacidad de ejecución.
+                </p>
+
+                <section id="statsSection">
+                    <div class="grid grid-cols-2 gap-4 mt-10">
+
+                        <div class="bg-transparent rounded-2xl text-left" data-aos="fade-right" data-aos-delay="100">
+                            <p
+                                class="bg-primary text-white font-medium inline-block w-[65px] rounded-md text-[24px] py-1 px-3 stat text-3xl font-bold">
+                                +20</p>
+                            <p class="text-[16px] mt-3">Años de experiencia</p>
+                        </div>
+
+                        <div class="bg-transparent rounded-2xl text-left" data-aos="fade-right" data-aos-delay="150">
+                            <p
+                                class="bg-app-green text-white font-medium inline-block w-[50px] rounded-md text-[24px] py-1 px-3 stat text-3xl font-bold">
+                                1K</p>
+                            <p class="text-[16px] mt-3">Marcas atendidas</p>
+                        </div>
+
+                        <div class="bg-transparent rounded-2xl text-left mt-3" data-aos="fade-left"
+                            data-aos-delay="200">
+                            <p
+                                class="bg-app-yellow text-white font-medium inline-block w-[75px] rounded-md text-[24px] py-1 px-3 stat text-3xl font-bold">
+                                20M</p>
+                            <p class="text-[16px] mt-3">Productos entregados/año</p>
+                        </div>
+
+                        <div class="bg-transparent rounded-2xl text-left mt-3" data-aos="fade-left"
+                            data-aos-delay="250">
+                            <p class="bg-app-cyan text-white font-medium inline-block w-[50px] rounded-md text-[24px] py-1 px-3 stat text-3xl font-bold"
+                                data-target="12">12</p>
+                            <p class="text-[16px] mt-3">Ciudades nivel nacional</p>
+                        </div>
+
+                    </div>
+                </section>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white px-6 md:px-12 py-16 overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <p class="text-sm font-bold text-[#ff0054] uppercase mb-2">
+                Testimonios
+            </p>
+            <h2 class="text-[40px] font-bold mt-2 leading-[40px]" data-aos="fade-right">
+                Opiniones de nuestros clientes
+            </h2>
+            <p class="text-gray-500 mt-4" data-aos="fade-right" data-aos-delay="100">
+                Descubre cómo hemos transformado los negocios en palabras de nuestros clientes...
+            </p>
+
+            <!-- Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
+
+                <!-- Card 1 -->
+                <div class="bg-app-brown text-white rounded-xl p-6 pb-8 relative" data-aos="fade-right"
+                    data-aos-delay="100">
+                    <img src="./images/comillas.png" class="w-6 h-6 absolute top-4 right-4" alt="Comillas" />
+                    <div class="mb-4 flex flex-col gap-3">
+                        <img src="https://wize.pe/wp-content/uploads/2024/12/user-3.svg" class="w-10 h-10 rounded-full"
+                            alt="Camila F." />
+                        <div>
+                            <p class="font-semibold text-white leading-none my-3">Empresa de alimentos</p>
+                            <p class="text-sm text-gray-400">Gerente Comercial</p>
+                        </div>
+                    </div>
+                    <p class="text-sm leading-relaxed font-medium">
+                        Entramos a nuevas zonas manteniendo un alto cumplimiento de entregas. El soporte y la
+                        visibilidad marcaron la diferencia.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-app-brown text-white rounded-xl p-6 pb-8 relative" data-aos="fade-right"
+                    data-aos-delay="150">
+                    <img src="./images/comillas.png" class="w-6 h-6 absolute top-4 right-4" alt="Comillas" />
+                    <div class="mb-4 flex flex-col gap-3">
+                        <img src="https://wize.pe/wp-content/uploads/2024/12/user-3.svg" class="w-10 h-10 rounded-full"
+                            alt="Camila F." />
+                        <div>
+                            <p class="font-semibold text-white leading-none my-3">Jefe de Supply Chain</p>
+                            <p class="text-sm text-gray-400">Bebidas y snacks</p>
+                        </div>
+                    </div>
+                    <p class="text-sm leading-relaxed font-medium">
+                        Los reportes en tiempo real y la coordinación con un solo operador simplificaron todo el
+                        proyecto.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-app-brown text-white rounded-xl p-6 pb-8 relative" data-aos="fade-left"
+                    data-aos-delay="100">
+                    <img src="./images/comillas.png" class="w-6 h-6 absolute top-4 right-4" alt="Comillas" />
+                    <div class="mb-4 flex flex-col gap-3">
+                        <img src="https://wize.pe/wp-content/uploads/2024/12/user-3.svg" class="w-10 h-10 rounded-full"
+                            alt="Camila F." />
+                        <div>
+                            <p class="font-semibold text-white leading-none my-3">Empresa de alimentos</p>
+                            <p class="text-sm text-gray-400">Gerente Comercial</p>
+                        </div>
+                    </div>
+                    <p class="text-sm leading-relaxed font-medium">
+                        Entramos a nuevas zonas manteniendo un alto cumplimiento de entregas. El soporte y la
+                        visibilidad marcaron la diferencia.
+                    </p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-app-brown text-white rounded-xl p-6 pb-8 relative" data-aos="fade-left"
+                    data-aos-delay="150">
+                    <img src="./images/comillas.png" class="w-6 h-6 absolute top-4 right-4" alt="Comillas" />
+                    <div class="mb-4 flex flex-col gap-3">
+                        <img src="https://wize.pe/wp-content/uploads/2024/12/user-3.svg" class="w-10 h-10 rounded-full"
+                            alt="Camila F." />
+                        <div>
+                            <p class="font-semibold text-white leading-none my-3">Jefe de Supply Chain</p>
+                            <p class="text-sm text-gray-400">Bebidas y snacks</p>
+                        </div>
+                    </div>
+                    <p class="text-sm leading-relaxed font-medium">
+                        Los reportes en tiempo real y la coordinación con un solo operador simplificaron todo el
+                        proyecto.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Overlay -->
+    <div id="modalOverlay" class="fixed inset-0 z-[120] hidden flex items-center justify-center min-h-screen">
+
+        <!-- Fondo oscuro -->
+        <div onclick="closeModal()"
+            class="absolute inset-0 bg-black/60 backdrop-blur-sm transition-opacity duration-300 opacity-0"
+            id="modalBackdrop"></div>
+
+        <!-- Modal -->
+        <div id="modalContent"
+            class="relative bg-app-brown text-white max-w-xl w-full mx-4 rounded-2xl shadow-2xl p-6 sm:p-10 z-10 opacity-0 scale-95 translate-y-10 transition-all duration-300">
+
+            <!-- Botón cerrar -->
+            <button onclick="closeModal()"
+                class="absolute top-4 right-4 text-white text-2xl hover:text-[#ff0054]">&times;</button>
+
+            <!-- Resto del contenido... -->
+            <h2 class="text-xl sm:text-2xl font-bold mb-2">Agendar reunión con <span class="text-[#ff0054]">Grupo</span>
+                Auren</h2>
+
+            <div class="flex items-center gap-2 mt-4 mb-3">
+                <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" class="w-5 h-5" />
+                <span class="text-lg font-bold text-white">+51 999 999 999</span>
+            </div>
+            <p class="text-sm text-gray-300 mb-6">Solicita una reunión gratuita según tu rubro. <br>(L-V
+                9AM-6PM / Sáb 9AM-1PM)</p>
+
+            <!-- Formulario -->
+            <form class="space-y-4 text-sm text-black">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <input type="text" placeholder="Nombre"
+                        class="rounded-md px-4 py-2 w-full outline-none border border-gray-300" required>
+                    <input type="email" placeholder="Correo electrónico"
+                        class="rounded-md px-4 py-2 w-full outline-none border border-gray-300" required>
+                    <input type="text" placeholder="RUC"
+                        class="rounded-md px-4 py-2 w-full outline-none border border-gray-300" required>
+                    <input type="text" placeholder="Teléfono"
+                        class="rounded-md px-4 py-2 w-full outline-none border border-gray-300" required>
+                </div>
+                <textarea rows="3"
+                    placeholder="Por favor, indica tu rubro y cuántas facturas, boletas y guías emites mensualmente."
+                    class="rounded-md px-4 py-2 w-full outline-none border border-gray-300"></textarea>
+
+                <button type="submit"
+                    class="w-full bg-[#ffbe2e] hover:bg-[#f3ad0c] text-[#0b0b0b] font-bold py-2 rounded-md transition">
+                    Solicitar
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <!-- AlpineJS -->
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
+    <script>
+        function carousel() {
+            return {
+                current: 0,
+                slides: [0, 1],
+                start() {
+                    setInterval(() => {
+                        this.current = (this.current + 1) % this.slides.length;
+                    }, 6000);
+                }
+            }
+        }
+    </script>
+
+    <footer class="border-t border-slate-800 bg-[#351E29] text-white">
+        <div class="container mx-auto px-4 lg:px-0 pt-12 pb-6">
+            <div class="grid grid-cols-1 gap-y-10 md:grid-cols-12 md:gap-x-10">
+                <!-- ABOUT (col-span-5) -->
+                <div class="md:col-span-6 flex flex-col">
+                    <a href="#" class="inline-flex items-center gap-2 font-semibold text-white">
+                        <img src="./images/logo-footer.png" alt="Grupo Auren" class="max-w-[250px]">
+                    </a>
+
+                    <div class="mt-3 text-[15px] leading-7 max-w-prose md:pr-8">
+                        <p>
+                            Grupo Auren es una <b>empresa de distribución de consumo masivo en Lima</b>. Operamos un
+                            modelo de
+                            <b>distribución horizontal</b> que integra múltiples categorías y marcas para brindar
+                            soluciones
+                            eficientes y confiables. Acompañamos a compañías consolidadas y a marcas emergentes con una
+                            operación diseñada para crecer.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- SERVICIOS (col-span-2) -->
+                <nav class="md:col-span-3" aria-labelledby="ft-services">
+                    <h3 id="ft-services" class="text-white font-semibold text-lg">Enlaces</h3>
+                    <ul class="mt-4 space-y-3 text-[15px]">
+                        <li><a href="#services" class="hover:text-white">Portada</a></li>
+                        <li><a href="#services" class="hover:text-white">Nosotros</a></li>
+                        <li><a href="#services" class="hover:text-white">Servicios</a></li>
+                        <li><a href="#services" class="hover:text-white">Blog</a></li>
+                        <li><a href="#services" class="hover:text-white">Trabaja con nosotros</a></li>
+                        <li><a href="#services" class="hover:text-white">Términos y condiciones</a></li>
+                        <li><a href="#services" class="hover:text-white">Políticas de privacidad</a></li>
+                        <li><a href="#services" class="hover:text-white">Políticas de Cookies</a></li>
+                    </ul>
+
+                    <div class="mt-6">
+                        <a href="https://zet.wize.pe/travelcab" target="_blank">
+                            <img src="./libro-reclamaciones.png" alt="Libro de Reclamaciones"
+                                class="h-24 w-auto object-contain rounded-md" loading="lazy" decoding="async">
+                        </a>
+                    </div>
+                </nav>
+
+                <!-- CONTACTO (col-span-3) -->
+                <address class="md:col-span-3 not-italic" aria-labelledby="ft-contact">
+                    <h3 id="ft-contact" class="text-white font-semibold text-lg">Contacto</h3>
+
+                    <ul class="mt-4 space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="ri-mail-line text-primary text-2xl mt-0.5" aria-hidden="true"></i>
+                            <a href="mailto:contacto@grupoauren.pe" class="text-base md:text-lg hover:text-white">
+                                contacto@grupoauren.pe
+                            </a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-phone-line text-primary text-2xl mt-0.5" aria-hidden="true"></i>
+                            <a href="tel:+51999999999" class="text-base md:text-lg hover:text-white">+51 999 999 999</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="ri-whatsapp-line text-primary text-2xl mt-0.5" aria-hidden="true"></i>
+                            <a href="https://wa.me/51999999999" class="text-base md:text-lg hover:text-white">
+                                +51 999 999 999
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Redes -->
+                    <div class="mt-6 flex items-center gap-3" aria-label="Redes sociales">
+                        <a href="https://www.facebook.com/TravelCabPeru" aria-label="Facebook"
+                            class="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-full bg-primary hover:primary">
+                            <i class="ri-facebook-circle-fill text-white text-2xl" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.instagram.com/travelcab.peru/" aria-label="Instagram"
+                            class="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-full bg-primary hover:primary">
+                            <i class="ri-instagram-line text-white text-2xl" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/travelcab/?originalSubdomain=pe" aria-label="LinkedIn"
+                            class="focus-ring inline-flex h-11 w-11 items-center justify-center rounded-full bg-primary hover:primary">
+                            <i class="ri-linkedin-box-fill text-white text-2xl" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </address>
+            </div>
+
+            <!-- Bottom bar -->
+        </div>
+
+        <div
+            class="text-center mt-10 border-t border-[#F9F0EC] py-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center text-xs text-[#F9F0EC]">
+            <p>© <span id="ft-year"></span> Grupo Auren. Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <button type="button" class="fixed bottom-[30px] right-[30px]">
+        <img src="https://reinodelvalle.pe/_nuxt/img/whatsapp-floating.5affb43.png" alt=""
+            class="max-w-[192px] transition transform hover:scale-95 duration-200 ease-in-out">
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.6.2/countUp.umd.js"></script>
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script>AOS.init();</script>
+
+    <!-- Script para animación -->
+    <script>
+        const openMenu = document.getElementById('openMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        const overlay = document.getElementById('mobileOverlay');
+
+        openMenu.addEventListener('click', () => {
+            overlay.classList.remove('translate-x-full');
+            overlay.classList.add('translate-x-0');
+        });
+
+        closeMenu.addEventListener('click', () => {
+            overlay.classList.remove('translate-x-0');
+            overlay.classList.add('translate-x-full');
+        });
+    </script>
+
+    <script>
+        function animateCounter(el, target) {
+            let start = 0;
+            const duration = 1500;
+            const startTime = performance.now();
+
+            const update = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const value = Math.floor(progress * target);
+
+                el.textContent = target >= 10000
+                    ? value.toLocaleString('de-DE') // formateo con puntos
+                    : value;
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            };
+
+            requestAnimationFrame(update);
+        }
+
+        let statsAnimated = false;
+
+        function triggerStats() {
+            const section = document.getElementById('statsSection');
+            const rect = section.getBoundingClientRect();
+
+            if (!statsAnimated && rect.top < window.innerHeight && rect.bottom > 0) {
+                statsAnimated = true;
+                document.querySelectorAll('.stat').forEach(el => {
+                    const target = parseInt(el.dataset.target.replace(/\./g, ''));
+                    el.textContent = '0'; // reset visualmente antes de iniciar
+                    animateCounter(el, target);
+                });
+            }
+        }
+
+        window.addEventListener('scroll', triggerStats);
+        window.addEventListener('load', triggerStats);
+    </script>
+
+    <script>
+        (function () {
+            const container = document.getElementById('logo-marquee');
+            const track = document.getElementById('marquee-track');
+            if (!container || !track) return;
+
+            const initialHTML = track.innerHTML;                   // guardamos el set original
+            const SPEED = 20; // px/seg
+            let cycleWidth = 0;   // ancho del set original
+            let x = 0;            // translateX actual
+            let rafId = null;
+            let lastTs = 0;
+            let paused = false;
+
+            function measureCycleWidth() {
+                // Medimos ANTES de clonar (solo el set original)
+                track.innerHTML = initialHTML;
+                // Forzamos layout y tomamos el ancho "real" del set original
+                cycleWidth = track.scrollWidth;
+            }
+
+            function fillWithClones() {
+                // Rellenamos repitiendo el set original hasta cubrir
+                // contenedor + un ciclo completo adicional (para que no haya huecos).
+                const containerWidth = container.clientWidth;
+                track.innerHTML = initialHTML;
+                while (track.scrollWidth < containerWidth + cycleWidth) {
+                    track.insertAdjacentHTML('beforeend', initialHTML);
+                }
+            }
+
+            function step(ts) {
+                if (paused) { lastTs = ts; rafId = requestAnimationFrame(step); return; }
+                if (!lastTs) lastTs = ts;
+                const dt = (ts - lastTs) / 1000; // segundos
+                lastTs = ts;
+
+                x -= SPEED * dt;
+
+                // Cuando avanzamos el ancho EXACTO de un ciclo, "envolvemos" sin salto.
+                if (-x >= cycleWidth) {
+                    x += cycleWidth;
+                }
+
+                track.style.transform = `translateX(${x}px)`;
+                rafId = requestAnimationFrame(step);
+            }
+
+            function start() {
+                cancelAnimationFrame(rafId);
+                lastTs = 0;
+                x = 0;
+                measureCycleWidth();
+                fillWithClones();
+                rafId = requestAnimationFrame(step);
+            }
+
+            // Pausa/resume en hover
+            container.addEventListener('mouseenter', () => { paused = true; });
+            container.addEventListener('mouseleave', () => { paused = false; });
+
+            start();
+        })();
+    </script>
+
+    <script>
+        function openModal() {
+            const overlay = document.getElementById('modalOverlay');
+            const content = document.getElementById('modalContent');
+            const backdrop = document.getElementById('modalBackdrop');
+
+            overlay.classList.remove('hidden');
+            setTimeout(() => {
+                backdrop.classList.remove('opacity-0');
+                content.classList.remove('opacity-0', 'scale-95', 'translate-y-10');
+            }, 10);
+        }
+
+        function closeModal() {
+            const overlay = document.getElementById('modalOverlay');
+            const content = document.getElementById('modalContent');
+            const backdrop = document.getElementById('modalBackdrop');
+
+            backdrop.classList.add('opacity-0');
+            content.classList.add('opacity-0', 'scale-95', 'translate-y-10');
+
+            setTimeout(() => {
+                overlay.classList.add('hidden');
+            }, 300);
+        }
+    </script>
+
+</body>
+
+</html>

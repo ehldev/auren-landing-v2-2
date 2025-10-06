@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    color: #090C66 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Space Grotesk", sans-serif;
+}
+
+@keyframes floatY {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.float-y {
+    animation: floatY 2.5s ease-in-out infinite;
+    display: inline-block;
+    /* necesario para que transform funcione */
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-slide {
+    animation: slide 30s linear infinite;
+}
+
+#custom-cursor {
+    transition: transform 0.08s ease-out;
+    transform: translate(-50%, -50%);
+}
+
+#carousel-track {
+    display: flex;
+    width: max-content;
+    animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Suaviza el render del transform */
+#marquee-track {
+    transform: translateX(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #marquee-track {
+        animation: none !important;
+    }
+}
+
+.service-card .content *{
+    transition: all .3s;
+}
+
+.service-card:hover .content * {
+    transform: translateY(-8px);
+}
